@@ -7,8 +7,8 @@
 <div class="container">
 	<div class="row justify-content-center">
 		<div class="col-8">
-			<h1>Категории</h1>
-			<a href="category_add">Добавить новую категорию</a>
+			<h1>Новости</h1>
+			<a href="news_add">Добавить новость</a>
 			<table class="table center table-bordered">
 				<tr>
 					<th>Id</th>
@@ -16,12 +16,12 @@
 					<th></th>
 					<th></th>
 				</tr>
-				<c:forEach var="category" items="${list}">
+				<c:forEach var="news" items="${list}">
 					<tr>
-						<td>${category.id}</td>
-						<td>${category.name}</td>
-						<td class="little"><a href="category/edit/${category.id}">Edit</a></td>
-						<td class="little"><a href="category/delete/${category.id}">Delete</a></td>
+						<td>${news.id}</td>
+						<td>${news.name}</td>
+						<td class="little"><a href="news/edit/${news.id}">Edit</a></td>
+						<td class="little"><a href="news/delete/${news.id}">Delete</a></td>
 					</tr>
 				</c:forEach>
 			</table>

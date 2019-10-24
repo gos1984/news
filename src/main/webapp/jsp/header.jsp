@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link href="resources/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-<link href="resources/css/style.css" rel="stylesheet" type="text/css">
+<link href="resources/css/jquery.fancybox.min.css" rel="stylesheet" type="text/css">
+<link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
 </head>
 <body>

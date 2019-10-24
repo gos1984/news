@@ -2,8 +2,8 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>    
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <jsp:include page="header.jsp" />
-        <h1>Добавить категорию</h1>  
-       <form:form method="post" action="category_save">    
+        <h1>Добавить новость</h1>  
+       <form:form method="post" action="/news/news_save">    
         <table >
          <tr>    
           <td>Наименование : </td>   

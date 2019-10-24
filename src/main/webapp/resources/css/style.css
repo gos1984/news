@@ -1,5 +1,13 @@
 @charset "UTF-8";
 
 body {
-	background: grey;
+	background: #f5f5f5;
+}
+
+.center {
+	text-align: center;
+}
+
+.little {
+	width: 70px;
 }

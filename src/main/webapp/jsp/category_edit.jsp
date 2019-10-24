@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <jsp:include page="header.jsp" />
         <h1>Редактировать категорию</h1>  
-       <form:form method="POST" action="/news/editsave">    
+       <form:form method="POST" action="/news/category/editsave">    
         <table >    
         <tr>  
         <td></td>    

@@ -2,17 +2,21 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>    
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <jsp:include page="header.jsp" />
-        <h1>Добавить категорию</h1>  
-       <form:form method="post" action="category_save">    
-        <table >
+        <h1>Редактировать новость</h1>  
+       <form:form method="POST" action="/news/news/editsave">    
+        <table >    
+        <tr>  
+        <td></td>    
+         <td><form:hidden  path="id" /></td>  
+         </tr>   
          <tr>    
-          <td>Наименование : </td>   
+          <td>Name : </td>   
           <td><form:input path="name"  /></td>  
-         </tr> 
+         </tr>
          <tr>    
           <td> </td>    
-          <td><input type="submit" value="Добавить" /></td>    
+          <td><input type="submit" value="Редактировать" /></td>    
          </tr>    
-        </table>
+        </table>    
        </form:form>
 <jsp:include page="footer.jsp" />
