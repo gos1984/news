@@ -53,7 +53,6 @@ public class NewsModel {
 	public int saveNews(News news) {
 		String sql = "INSERT INTO news(name, date_create, category_id, description) VALUES ('" + news.getName()
 				+ "','" + news.getDate_create() + "'," + news.getCategory_id() + ",'" + news.getDescription() + "')";
-		System.out.println(sql);
 		return template.update(sql);
 	}
 

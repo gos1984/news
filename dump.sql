@@ -124,10 +124,6 @@ ALTER TABLE ONLY public.news ALTER COLUMN id SET DEFAULT nextval('public.news_id
 --
 
 COPY public.category (id, name) FROM stdin;
-2	Спорт
-15	Политика
-24	Финансы
-3	Наука
 \.
 
 
@@ -143,14 +139,14 @@ COPY public.news (id, name, date_create, category_id, description) FROM stdin;
 -- Name: category_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.category_id_seq', 25, true);
+SELECT pg_catalog.setval('public.category_id_seq', 1, true);
 
 
 --
 -- Name: news_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.news_id_seq', 1, false);
+SELECT pg_catalog.setval('public.news_id_seq', 1, true);
 
 
 --
