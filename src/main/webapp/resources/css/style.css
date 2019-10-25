@@ -11,3 +11,16 @@ body {
 .little {
 	width: 70px;
 }
+
+.popup {
+	display: none;
+}
+
+.button, input, button, select {
+	margin: 10px auto;
+}
+
+.popup_form {
+	background: #ffffff;
+	padding: 20px;
+}

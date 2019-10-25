@@ -40,7 +40,7 @@ public class NewsModel {
 	}
 
 	public List<Category> getCategoryes() {
-		return template.query("SELECT * FROM Category", new RowMapper<Category>() {
+		return template.query("SELECT * FROM Category ORDER BY id ASC", new RowMapper<Category>() {
 			public Category mapRow(ResultSet rs, int row) throws SQLException {
 				Category c = new Category();
 				c.setId(rs.getInt("id"));
@@ -52,13 +52,14 @@ public class NewsModel {
 
 	public int saveNews(News news) {
 		String sql = "INSERT INTO news(name, date_create, category_id, description) VALUES ('" + news.getName()
-				+ "','2019-10-25'," + news.getCategoryId() + ",'" + news.getDescription() + "')";
+				+ "','" + news.getDate_create() + "'," + news.getCategory_id() + ",'" + news.getDescription() + "')";
+		System.out.println(sql);
 		return template.update(sql);
 	}
 
 	public int updateNews(News news) {
 		String sql = "UPDATE news SET name = '" + news.getName() + "', description = '" + news.getDescription()
-				+ "' WHERE id=" + news.getId();
+				+ "', category_id = " + news.getCategory_id() + " WHERE id=" + news.getId();
 		return template.update(sql);
 	}
 
@@ -73,17 +74,17 @@ public class NewsModel {
 	}
 
 	public List<News> getNews() {
-		return template.query("SELECT * FROM news", new RowMapper<News>() {
+		return template.query("SELECT n.*, c.name AS category FROM news n LEFT JOIN category c ON n.category_id = c.id ORDER BY n.id DESC", new RowMapper<News>() {
 			public News mapRow(ResultSet rs, int row) throws SQLException {
 				News n = new News();
 				n.setId(rs.getInt("id"));
 				n.setName(rs.getString("name"));
 				n.setDescription(rs.getString("description"));
-				n.setDateCreate(rs.getString("date_create"));
-				n.setCategoryId(rs.getInt("category_id"));
+				n.setDate_create(rs.getString("date_create"));
+				n.setCategory_id(rs.getInt("category_id"));
+				n.setCategoryName(rs.getString("category"));
 				return n;
 			}
 		});
 	}
-
 }

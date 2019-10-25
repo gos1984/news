@@ -2,8 +2,17 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>    
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <jsp:include page="jsp/header.jsp" />
-<a href="category_add">Добавить категорию</a>  
+<section>
+<div class="container">
+<div class="row align-items-center justify-content-center">
+<div class="col-6 center">
 <a href="category">Список категорий</a>
-<a href="news_add">Добавить новость</a>  
+</div>
+<div class="col-6 center">
 <a href="news">Список новостей</a>
+</div>
+
+</div>
+</div>
+</section>
 <jsp:include page="jsp/footer.jsp" />

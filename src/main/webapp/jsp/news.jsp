@@ -6,13 +6,16 @@
 <section>
 <div class="container">
 	<div class="row justify-content-center">
-		<div class="col-8">
+		<div class="col-12">
 			<h1>Новости</h1>
-			<a href="news_add">Добавить новость</a>
+			<a href="#news_add" class="fancybox">Добавить новость</a>
 			<table class="table center table-bordered">
 				<tr>
-					<th>Id</th>
-					<th>Name</th>
+					<th>№</th>
+					<th>Наименование</th>
+					<th>Статья</th>
+					<th>Дата создания</th>
+					<th>Категория</th>
 					<th></th>
 					<th></th>
 				</tr>
@@ -20,8 +23,11 @@
 					<tr>
 						<td>${news.id}</td>
 						<td>${news.name}</td>
-						<td class="little"><a href="news/edit/${news.id}">Edit</a></td>
-						<td class="little"><a href="news/delete/${news.id}">Delete</a></td>
+						<td>${news.description}</td>
+						<td>${news.date_create}</td>
+						<td>${news.categoryName}</td>
+						<td class="little"><a href="news/edit/${news.id}" class="btn btn-info">Редактировать</a></td>
+						<td class="little"><a href="news/delete/${news.id}" class="btn btn-danger">Удалить</a></td>
 					</tr>
 				</c:forEach>
 			</table>
@@ -29,4 +35,7 @@
 	</div>
 </div>
 </section>
+<div id="news_add" class="popup">
+<jsp:include page="news_add.jsp" />
+</div>
 <jsp:include page="footer.jsp" />

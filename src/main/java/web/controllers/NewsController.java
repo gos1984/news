@@ -36,6 +36,7 @@ public class NewsController {
 	public String viewCategory(Model m) {
 		List<Category> list = model.getCategoryes();
 		m.addAttribute("list", list);
+		m.addAttribute("command", new Category());
 		return "category";
 	}
 
@@ -74,13 +75,18 @@ public class NewsController {
 	public String viewNews(Model m) {
 		List<News> list = model.getNews();
 		m.addAttribute("list", list);
+		m.addAttribute("command", new News());
+		List category = model.getCategoryes();
+		m.addAttribute("categoryes", category);
 		return "news";
 	}
 
 	@RequestMapping("/news/edit/{id}")
 	public String editNews(@PathVariable int id, Model m) {
 		News news = model.getNewId(id);
+		List category = model.getCategoryes();
 		m.addAttribute("command", news);
+		m.addAttribute("categoryes", category);
 		return "news_edit";
 	}
 
